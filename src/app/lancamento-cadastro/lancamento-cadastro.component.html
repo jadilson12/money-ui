@@ -18,15 +18,42 @@
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
       </div>
       <div class="ui-g-12 ui-md-9 ui-fluid">
-        <label>Descrição</label>
-        <input pInputText type="text" />
+        <label>Descrição {{ descricao.errors | json }}</label>
+        <input
+          pInputText
+          type="text"
+          name="descricao"
+          ngModel
+          #descricao="ngModel"
+          required
+          minlength="5"
+        />
+
+        <app-message
+          [control]="descricao"
+          error="required"
+          message="Campo obrigatório"
+        ></app-message>
+        <app-message
+          [control]="descricao"
+          error="minlength"
+          message="Minimo de {{ descricao.errors?.minlength?.requiredLength }} 
+          caracteres."
+        ></app-message>
       </div>
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Valor</label>
-        <input 
-        pInputText
-        currencyMask 
-        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
+        <input
+          required
+          #valor="ngModel"
+          type="number"
+          ngModel
+          name="valor"
+          pInputText
+          currencyMask
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+        />
+         <app-message [control]="valor" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Categoria</label>
@@ -34,7 +61,12 @@
           [options]="categorias"
           placeholder="Seleciona.."
           [autoWidth]="false"
+          ngModel
+          #categoria="ngModel"
+          required
+          name="categoria"
         ></p-dropdown>
+           <app-message [control]="categoria" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Pessoa</label>
@@ -43,11 +75,23 @@
           placeholder="Seleciona.."
           [autoWidth]="false"
           [filter]="true"
+          ngModel
+          required
+          name="pessoa"
+          #pessoa="ngModel" 
         ></p-dropdown>
+        <app-message [control]="pessoa" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">
         <label>Observação</label>
-        <textarea pInputTextarea rows="3"></textarea>
+        <textarea 
+        pInputTextarea 
+        required
+        ngModel
+        name="observacao"
+        #observacao="ngModel" 
+        rows="3"></textarea>
+        <app-message [control]="observacao" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar"></button>

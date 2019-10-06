@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipModule } from 'primeng/tooltip';
@@ -21,6 +23,9 @@ import { DropdownModule } from "primeng/dropdown";
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 import { InputMaskModule } from "primeng/inputmask";
+import { MessagesModule } from "primeng/messages";
+import { MessageModule } from "primeng/message";
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,8 @@ import { InputMaskModule } from "primeng/inputmask";
     NavbarComponent,
     PessoasComponent,
     LancamentoCadastroComponent,
-    PessoaCadastroComponent
+    PessoaCadastroComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,10 @@ import { InputMaskModule } from "primeng/inputmask";
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    InputMaskModule
+    InputMaskModule,
+    FormsModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
