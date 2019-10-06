@@ -6,40 +6,143 @@
       </div>
       <div class="ui-g-12 ui-fluid">
         <label>Nome</label>
-        <input pInputText type="" />
+        <input
+          pInputText
+          type=""
+          name="nome"
+          required
+          #nome="ngModel"
+          ngModel
+          minlength="5"
+        />
+        <app-message
+          [control]="nome"
+          error="required"
+          message="Informe o nome"
+        ></app-message>
+        <app-message
+          [control]="nome"
+          error="minlength"
+          message="Minimo de {{ nome.errors?.minlength?.requiredLength }} caracteres"
+        ></app-message>
       </div>
       <div class="ui-g-12 ui-md-9 ui-fluid">
         <label>Logradouro</label>
-        <input pInputText type="" />
+        <input
+          pInputText
+          name="logradouro"
+          required
+          #logradouro="ngModel"
+          ngModel
+          type=""
+        />
+        <app-message
+          [control]="logradouro"
+          error="required"
+          message="Informe o logradouro"
+        ></app-message>
       </div>
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Número</label>
-        <input pInputText type="" />
+        <input
+          name="numero"
+          required
+          #numero="ngModel"
+          ngModel
+          pInputText
+          type=""
+        />
+        <app-message
+          [control]="numero"
+          error="required"
+          message="Informe o numero"
+        ></app-message>
       </div>
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Complemento</label>
-        <input pInputText type="" />
+        <input
+          name="complemento"
+          #complemento="ngModel"
+          ngModel
+          pInputText
+          type=""
+        />
       </div>
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Bairro</label>
-        <input pInputText type="" />
+        <input
+          name="bairro"
+          required
+          #bairro="ngModel"
+          ngModel
+          pInputText
+          type=""
+        />
+        <app-message
+          [control]="bairro"
+          error="required"
+          message="Informe o bairro"
+        ></app-message>
       </div>
       <div class="ui-g-12  ui-md-4 ui-fluid">
         <label>CEP</label>
-        <p-inputMask  mask="99.999-999" placeholder="00.000-000"></p-inputMask>
+        <p-inputMask
+          required
+          name="cep"
+          ngModel
+          #cep="ngModel"
+          mask="99.999-999"
+          placeholder="00.000-000"
+        >
+        </p-inputMask>
+        <app-message
+          [control]="cep"
+          error="required"
+          message="Informe o cep"
+        ></app-message>
       </div>
       <div class="ui-g-12  ui-md-6 ui-fluid">
         <label>Cidade</label>
-        <input pInputText type="" />
+        <input
+          name="cidade"
+          required
+          #cidade="ngModel"
+          ngModel
+          pInputText
+          type=""
+        />
+        <app-message
+          [control]="cidade"
+          error="required"
+          message="Informe o cidade"
+        ></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Estado</label>
-        <input pInputText type="" />
+        <input
+          name="estado"
+          required
+          #estado="ngModel"
+          ngModel
+          pInputText
+          type=""
+        />
+        <app-message
+          [control]="estado"
+          error="required"
+          message="Informe o estado"
+        ></app-message>
       </div>
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar"></button>
-        <button pButton type=""  [style.margin-left.px]="15" label="Novo"></button>
-        <a [style.margin-left.px]="15" href="javascript:;">Voltar para Pesquisa</a
+        <button
+          pButton
+          type=""
+          [style.margin-left.px]="15"
+          label="Novo"
+        ></button>
+        <a [style.margin-left.px]="15" href="javascript:;"
+          >Voltar para Pesquisa</a
         >
       </div>
     </form>
