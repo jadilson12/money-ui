@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LancamentoPesquisaComponent } from './lancamento-pesquisa/lancamento-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PessoasComponent } from './pessoas/pessoas.component';
+import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { CalendarModule } from "primeng/calendar";
 import { DropdownModule } from "primeng/dropdown";
@@ -26,16 +26,20 @@ import { InputMaskModule } from "primeng/inputmask";
 import { MessagesModule } from "primeng/messages";
 import { MessageModule } from "primeng/message";
 import { MessageComponent } from './message/message.component';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
+import { LancamentoGridComponent } from './lancamento-grid/lancamento-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LancamentoPesquisaComponent,
     NavbarComponent,
-    PessoasComponent,
+    PessoasPesquisaComponent,
     LancamentoCadastroComponent,
     PessoaCadastroComponent,
-    MessageComponent
+    MessageComponent,
+    PessoasGridComponent,
+    LancamentoGridComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-lancamento-pesquisa",
@@ -7,8 +6,6 @@ import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./lancamento-pesquisa.component.css"]
 })
 export class LancamentoPesquisaComponent {
-  faTrash = faTrash;
-  faEdit = faEdit;
   lancamentos = [
     {
       tipo: "DESPESA",
