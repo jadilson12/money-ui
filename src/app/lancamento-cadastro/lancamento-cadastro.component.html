@@ -1,5 +1,5 @@
 <div class="container">
-  <form>
+  <form #lancamentoForm="ngForm">
     <div class="ui-g">
       <div class="ui-g-12">
         <h1>Novo lançamento</h1>
@@ -18,7 +18,7 @@
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
       </div>
       <div class="ui-g-12 ui-md-9 ui-fluid">
-        <label>Descrição {{ descricao.errors | json }}</label>
+        <label>Descrição</label>
         <input
           pInputText
           type="text"
@@ -43,17 +43,9 @@
       </div>
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Valor</label>
-        <input
-          required
-          #valor="ngModel"
-          type="number"
-          ngModel
-          name="valor"
-          pInputText
-          currencyMask
-          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
-        />
-         <app-message [control]="valor" error="required" message="Campo obrigatório"></app-message>
+       <input pInputText type="text" name="valor" placeholder="0,00"
+          currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false }"
+          ngModel required>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Categoria</label>
@@ -62,11 +54,9 @@
           placeholder="Seleciona.."
           [autoWidth]="false"
           ngModel
-          #categoria="ngModel"
           required
           name="categoria"
         ></p-dropdown>
-           <app-message [control]="categoria" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Pessoa</label>
@@ -78,23 +68,22 @@
           ngModel
           required
           name="pessoa"
-          #pessoa="ngModel" 
         ></p-dropdown>
-        <app-message [control]="pessoa" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">
         <label>Observação</label>
         <textarea 
         pInputTextarea 
-        required
         ngModel
         name="observacao"
-        #observacao="ngModel" 
         rows="3"></textarea>
-        <app-message [control]="observacao" error="required" message="Campo obrigatório"></app-message>
       </div>
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar"></button>
+        <button 
+        pButton 
+        type="submit" 
+        [disabled]="!lancamentoForm.valid"  
+        label="Salvar"></button>
         <button
           pButton
           [style.margin-left.px]="15"
