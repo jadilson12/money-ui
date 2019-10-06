@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TooltipModule } from 'primeng/tooltip';
-
+import { SelectButtonModule } from "primeng/selectbutton";
 
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 
@@ -14,6 +15,10 @@ import { AppComponent } from './app.component';
 import { LancamentoPesquisaComponent } from './lancamento-pesquisa/lancamento-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoasComponent } from './pessoas/pessoas.component';
+import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { CalendarModule } from "primeng/calendar";
+import { DropdownModule } from "primeng/dropdown";
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 
 @NgModule({
@@ -21,21 +26,25 @@ import { PessoasComponent } from './pessoas/pessoas.component';
     AppComponent,
     LancamentoPesquisaComponent,
     NavbarComponent,
-    PessoasComponent
+    PessoasComponent,
+    LancamentoCadastroComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     InputTextModule,
+    InputTextareaModule,
     ButtonModule,
     TableModule,
-    TooltipModule
-
+    TooltipModule,
+    CalendarModule,
+    SelectButtonModule,
+    DropdownModule,
+    CurrencyMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
