@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
-import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
-import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
-
+import { PessoaCadastroComponent } from "./pessoa-cadastro/pessoa-cadastro.component";
+import { PessoasGridComponent } from "./pessoas-grid/pessoas-grid.component";
+import { PessoasPesquisaComponent } from "./pessoas-pesquisa/pessoas-pesquisa.component";
 
 import { TooltipModule } from "primeng/tooltip";
 import { SelectButtonModule } from "primeng/selectbutton";
@@ -17,6 +16,8 @@ import { CalendarModule } from "primeng/calendar";
 import { DropdownModule } from "primeng/dropdown";
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { InputMaskModule } from "primeng/inputmask";
+
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -33,6 +34,8 @@ import { InputMaskModule } from "primeng/inputmask";
     CurrencyMaskModule,
     InputMaskModule,
     FormsModule,
+
+    SharedModule
   ],
   declarations: [
     PessoaCadastroComponent,
