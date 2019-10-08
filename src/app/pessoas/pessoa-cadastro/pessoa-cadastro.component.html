@@ -16,7 +16,7 @@
           ngModel
           minlength="5"
         />
-        <app-message
+        <!-- <app-message
           [control]="nome"
           error="required"
           message="Informe o nome"
@@ -25,7 +25,7 @@
           [control]="nome"
           error="minlength"
           message="Minimo de {{ nome.errors?.minlength?.requiredLength }} caracteres"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12 ui-md-9 ui-fluid">
         <label>Logradouro</label>
@@ -37,11 +37,11 @@
           ngModel
           type=""
         />
-        <app-message
+        <!-- <app-message
           [control]="logradouro"
           error="required"
           message="Informe o logradouro"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Número</label>
@@ -53,11 +53,11 @@
           pInputText
           type=""
         />
-        <app-message
+        <!-- <app-message
           [control]="numero"
           error="required"
           message="Informe o numero"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Complemento</label>
@@ -79,11 +79,11 @@
           pInputText
           type=""
         />
-        <app-message
+        <!-- <app-message
           [control]="bairro"
           error="required"
           message="Informe o bairro"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12  ui-md-4 ui-fluid">
         <label>CEP</label>
@@ -96,11 +96,11 @@
           placeholder="00.000-000"
         >
         </p-inputMask>
-        <app-message
+        <!-- <app-message
           [control]="cep"
           error="required"
           message="Informe o cep"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12  ui-md-6 ui-fluid">
         <label>Cidade</label>
@@ -112,11 +112,11 @@
           pInputText
           type=""
         />
-        <app-message
+        <!-- <app-message
           [control]="cidade"
           error="required"
           message="Informe o cidade"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Estado</label>
@@ -128,11 +128,11 @@
           pInputText
           type=""
         />
-        <app-message
+        <!-- <app-message
           [control]="estado"
           error="required"
           message="Informe o estado"
-        ></app-message>
+        ></app-message> -->
       </div>
       <div class="ui-g-12">
         <button  pButton type="submit" label="Salvar" [disabled]="!pessoaForm.valid"></button>
