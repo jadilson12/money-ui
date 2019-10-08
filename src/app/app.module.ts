@@ -8,19 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { MessagesModule } from "primeng/messages";
-import { MessageModule } from "primeng/message";
-import { MessageComponent } from './message/message.component';
-
-
 import { PessoasModule } from './pessoas/pessoas.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    MessageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +24,6 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
     PessoasModule,
     LancamentosModule,
 
-    MessagesModule,
-    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
