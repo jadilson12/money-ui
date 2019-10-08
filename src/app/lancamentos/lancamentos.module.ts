@@ -20,6 +20,7 @@ import { LancamentoGridComponent } from '../lancamentos/lancamento-grid/lancamen
 import { LancamentoCadastroComponent } from '../lancamentos/lancamento-cadastro/lancamento-cadastro.component';
 import { LancamentoPesquisaComponent } from "../lancamentos/lancamento-pesquisa/lancamento-pesquisa.component";
 
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     LancamentoPesquisaComponent,
@@ -27,7 +28,7 @@ import { LancamentoPesquisaComponent } from "../lancamentos/lancamento-pesquisa/
     LancamentoCadastroComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
     FormsModule,
 
     FontAwesomeModule,
@@ -41,7 +42,9 @@ import { LancamentoPesquisaComponent } from "../lancamentos/lancamento-pesquisa/
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    InputMaskModule
+    InputMaskModule,
+
+    SharedModule,
   ],
   exports: [LancamentoPesquisaComponent, LancamentoCadastroComponent]
 })
