@@ -8,6 +8,8 @@ import { AppComponent } from "./app.component";
 import { PessoasModule } from "./pessoas/pessoas.module";
 import { LancamentosModule } from "./lancamentos/lancamentos.module";
 import { CoreModule } from "./core/core.module";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {InterceptorService} from "./_services/interceptor.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,13 @@ import { CoreModule } from "./core/core.module";
     LancamentosModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

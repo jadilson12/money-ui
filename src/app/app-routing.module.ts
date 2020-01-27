@@ -5,9 +5,10 @@ import {LancamentoPesquisaComponent} from "./lancamentos/lancamento-pesquisa/lan
 
 
 const routes: Routes = [
-  {path: "", component: PessoasPesquisaComponent},
-  {path: "pessoas", component: PessoasPesquisaComponent},
+  {path: "", component: LancamentoPesquisaComponent},
   {path: "lancamentos", component: LancamentoPesquisaComponent},
+  // {path: "", component: PessoasPesquisaComponent},
+  {path: "pessoas", component: PessoasPesquisaComponent},
 ];
 
 @NgModule({
